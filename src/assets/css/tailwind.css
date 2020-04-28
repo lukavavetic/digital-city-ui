@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+
+.bg-color {
+    background-image: linear-gradient(120deg, #93CDF9, white);
+}
+
+.page-content {
+    @apply w-full m-5;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    @apply w-1/5 bg-gray-100 h-screen;
+}
+
+.sidebar-button {
+    @apply text-blue-800 text-lg tracking-wider text-center bg-gray-200 px-4 py-4 mt-1;
+}
+
+.sidebar-button:hover {
+    @apply text-white bg-blue-800;
+}
+/* ************************************ */
+
+/* NAVIGATION */
+.logo {
+    @apply h-24 w-32;
+}
+
+.organisation-name {
+    @apply text-white font-bold text-2xl pt-3 tracking-widest;
+}
+
+.organisation-description {
+    @apply text-white text-lg;
+}
+
+.nav-user-box {
+    @apply bg-gray-100 flex px-4 py-1 mt-2 cursor-pointer;
+}
+
+.nav-user-box:hover {
+    @apply bg-gray-200;
+}
+
+.nav-user-avatar {
+    @apply h-10 mr-2 mt-1 rounded-full;
+}
+
+.nav-user-name {
+    @apply text-blue-800 text-center mt-2 ml-1 text-lg;
+}
+
+/* ************************************ */
+
+/* CONTENT */
+
+/* content header */
+.content-heading {
+    @apply text-4xl font-extrabold text-blue-800;
+}
+
+.content-subheading {
+    @apply text-xl text-blue-800;
+}
+
+.submit-request-button {
+    @apply bg-blue-800 px-4 py-2 text-white text-center text-xl float-right;
+}
+
+.submit-request-button:hover {
+    @apply bg-blue-400;
+}
+/* ************************************ */
+
+/* content table */
+.table {
+    @apply table-auto w-full;
+}
+
+.table-body {
+    @apply text-lg text-blue-600;
+}
+
+.td {
+    @apply border-b-2 px-4 py-3 text-center text-xl;
+}
+
+.th {
+    @apply px-4 py-2 bg-blue-800 text-white text-xl text-center;
+}
+
+.tr {
+    @apply text-center cursor-pointer;
+}
+
+.tr:hover {
+    @apply bg-gray-100;
+}
+
+.action-icon {
+    @apply cursor-pointer;
+}
+
+/* ************************************ */
+
+/* content table */
+.form-heading {
+    @apply font-bold text-blue-800 text-4xl tracking-wide text-center;
+}
+
+.form-box {
+    @apply w-full mt-5;
+}
+
+.form-text-input {
+    @apply border w-full mt-1 py-2 px-1 text-lg text-blue-900;
+}
+
+.form-label {
+    @apply text-lg text-blue-800 tracking-wider;
+}
+
+.form-file-input {
+    @apply flex w-full justify-center items-center mt-1 text-blue-800 bg-gray-200 border border-blue-800 border-dashed cursor-pointer;
+}
+
+.form-file-input:hover {
+    @apply bg-gray-100;
+}
+
+.form-file-label {
+    @apply text-xl tracking-wide;
+}
+
+.form-submit-button {
+    @apply text-2xl tracking-wider bg-blue-300 text-blue-800 px-3 py-2 w-full;
+}
+
+.form-submit-button:hover {
+    @apply bg-blue-800 text-white;
+}
+
+/* ************************************ */
+
+.header-bg {
+    @apply bg-color;
+}
+
+@tailwind utilities;
