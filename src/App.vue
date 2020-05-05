@@ -2,34 +2,30 @@
   <div id="app" class="h-full">
     <Header></Header>
 
-<!--    <div class="flex flex-row">-->
-<!--      <Sidebar></Sidebar>-->
+    <div class="flex flex-row">
+      <Sidebar></Sidebar>
 
-<!--      <div class="page-content">-->
-<!--        <Form></Form>-->
-<!--      </div>-->
-<!--    </div>-->
-    <div>
-      <Login></Login>
-    </div>
-
-
+      <div class="page-content">
+        <router-view :key="$route.path"></router-view>
+      </div>
+   </div>
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue'
-// import Sidebar from './components/Sidebar.vue'
-import Login from './components/Login.vue'
+import Header from '@/components/Header'
+import Sidebar from '@/components/Sidebar'
+
 
 export default {
   name: 'App',
   components: {
     Header,
-
-    Login,
+    Sidebar
+    
   }
 }
 </script>
+
 
 
