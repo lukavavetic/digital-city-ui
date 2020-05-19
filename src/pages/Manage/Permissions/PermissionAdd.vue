@@ -38,8 +38,6 @@
 </template>
 
 <script>
-    import axios from 'axios'
-
     export default {
         data () {
             return {
@@ -52,7 +50,7 @@
         methods: {
             post: function() {
                 var self = this;
-                axios.post('http://192.168.1.12:80/api/permission.create', this.permission,
+                this.$http.post('http://192.168.1.12:80/api/permission.create', this.permission,
                     { headers: {
                         'Accept': 'application/json'
                         }

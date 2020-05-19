@@ -39,8 +39,6 @@
 </template>
 
 <script>
-    import axios from 'axios';
-
     export default {
         data() {
             return {
@@ -49,7 +47,7 @@
         },
         name: 'PermissionList',
         created () {
-            axios.get('http://192.168.1.12:80/api/permission.list', {
+            this.$http.get('http://192.168.1.12:80/api/permission.list', {
             }).then(response => {
                 this.permissions = response.data.data;
             })

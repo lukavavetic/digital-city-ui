@@ -14,8 +14,6 @@
 </template>
 
 <script>
-import axios from 'axios';
-
 export default {
   data() {
     return {
@@ -25,7 +23,7 @@ export default {
   },
    name: 'UserList',
     created () {
-    axios.get('http://192.168.1.12:80/api/user.list', {
+    this.$http.get('http://192.168.1.12:80/api/user.list', {
     }).then(response => {
         this.users = response.data.data;
     })
