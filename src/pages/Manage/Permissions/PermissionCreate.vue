@@ -1,5 +1,5 @@
 <template>
-    <div id="add-blog">
+    <div>
 
         <!-- Permissions added success alert -->
         <div v-if="showSuccessAlert" class="flex items-center bg-blue-500 text-white text-sm font-bold px-4 py-3 rounded mt-1" role="alert">
@@ -7,26 +7,33 @@
             <p>Dozvola uspješno dodana.</p>
         </div>
 
-        <!-- Add permission button -->
-        <button v-show="!formActive" v-on:click="formActive = !formActive" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-1">Dodaj dozvolu</button>
-
         <!-- Add permission form -->
-        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" v-if="formActive">
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2">
-                        Permission name
-                    </label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" v-model.lazy="permission.name" type="text" placeholder="Enter permission name">
+        <div>
+            <div class="flex justify-center">
+                <div class="flex-col w-1/2">
+                    <div class="form-heading">
+                        Dodavanje nove dozvole
+                    </div>
+
+                    <div class="flex">
+                        <div class="form-box mr-3">
+                            <label class="form-label">Ime dozvole</label>
+                            <input type="text" class="form-text-input" v-model.lazy="permission.name">
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <div class="form-box mr-3">
+                            <button v-on:click.prevent="post" class="form-submit-button form-submit-button:hover">Dodaj</button>
+                        </div>
+
+                        <div class="form-box">
+                            <button class="form-submit-button form-submit-button:hover"><router-link to="/manage/permissions">Odustani</router-link></button>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex items-center justify-between">
-                    <button v-on:click.prevent="post" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                        Add permission
-                    </button>
-                    <button v-on:click="formActive = false" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                        Cancel
-                    </button>
-                </div>
-            </form>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -40,7 +47,6 @@
                     name: ''
                 },
                 showSuccessAlert: false,
-                formActive: false,
             }
         },
         methods: {
@@ -51,7 +57,6 @@
                         'Accept': 'application/json'
                         }
                 }).then(function() {
-                    self.formActive = false;
                     self.successAlert();
                 });
             },

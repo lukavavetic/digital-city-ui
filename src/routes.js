@@ -7,6 +7,7 @@ import Login from './pages/Auth/Login.vue'
 import UserList from './pages/Manage/Users/UserList.vue'
 import PermissionList from "./pages/Manage/Permissions/PermissionList";
 import ManageMain from "./pages/Manage/ManageMain";
+import PermissionCreate from "./pages/Manage/Permissions/PermissionCreate";
 
 function createRouter() {
     var router = new Router({
@@ -32,7 +33,12 @@ function createRouter() {
                 path: '/manage/permissions',
                 name: '',
                 component: PermissionList
-            }
+            },
+            {
+                path: '/manage/permissions/add',
+                name: '',
+                component: PermissionCreate
+            },
         ]
     })
 
