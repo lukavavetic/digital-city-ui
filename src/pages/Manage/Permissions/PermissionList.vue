@@ -45,9 +45,6 @@
         data() {
             return {
                 permissions: [],
-                search: '',
-                addFormActive: false,
-                formActive: false
             }
         },
         name: 'PermissionList',

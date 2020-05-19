@@ -69,9 +69,3 @@
         }
     }
 </script>
-
-<style scoped>
-    input {
-        border: 1px solid;
-    }
-</style>
