@@ -3,8 +3,10 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-import Login from './pages/Login.vue'
-import UserList from './pages/Users/UserList.vue'
+import Login from './pages/Auth/Login.vue'
+import UserList from './pages/Manage/Users/UserList.vue'
+import PermissionList from "./pages/Manage/Permissions/PermissionList";
+import ManageMain from "./pages/Manage/ManageMain";
 
 function createRouter() {
     var router = new Router({
@@ -17,10 +19,20 @@ function createRouter() {
                 component: Login
             },
             {
-                path: '/users',
+                path: '/manage',
+                name: '',
+                component: ManageMain
+            },
+            {
+                path: '/manage/users',
                 name: '',
                 component: UserList
             },
+            {
+                path: '/manage/permissions',
+                name: '',
+                component: PermissionList
+            }
         ]
     })
 
