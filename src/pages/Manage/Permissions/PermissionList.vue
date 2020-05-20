@@ -49,7 +49,8 @@
         },
         name: 'PermissionList',
         created () {
-            this.$http.get('permission.list')
+            this.$http
+                .get('permission.list')
                 .then(response => {
                 this.permissions = response.data.data;
             })

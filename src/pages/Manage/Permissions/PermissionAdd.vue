@@ -52,8 +52,9 @@
         methods: {
             post: function() {
                 var self = this;
-                this.$http.post('permission.create', this.permission
-                ).then(function() {
+                this.$http
+                    .post('permission.create', this.permission)
+                    .then(function() {
                     self.successAlert();
                 });
             },
