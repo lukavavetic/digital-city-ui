@@ -28,7 +28,9 @@
                         </div>
 
                         <div class="form-box">
-                            <button class="form-submit-button form-submit-button:hover"><router-link to="/manage/permissions">Odustani</router-link></button>
+                            <router-link to="/manage/permissions">
+                                <button class="form-submit-button form-submit-button:hover">Odustani</button>
+                            </router-link>
                         </div>
                     </div>
                 </div>

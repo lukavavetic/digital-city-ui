@@ -6,9 +6,11 @@
                     <h1 class="content-heading">Dozvole</h1>
                 </div>
                 <div class="w-1/2">
-                    <button class="submit-request-button submit-request-button:hover">
-                        <router-link to="/manage/permissions/add" exact>Predaj zahtjev</router-link>
-                    </button>
+                    <router-link to="/manage/permissions/add" exact>
+                        <button class="submit-request-button submit-request-button:hover">
+                            Predaj zahtjev
+                        </button>
+                    </router-link>
                 </div>
             </div>
 
