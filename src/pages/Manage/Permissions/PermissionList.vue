@@ -8,7 +8,7 @@
                 <div class="w-1/2">
                     <router-link to="/manage/permissions/add" exact>
                         <button class="submit-request-button submit-request-button:hover">
-                            Predaj zahtjev
+                            Dodaj dozvolu
                         </button>
                     </router-link>
                 </div>
