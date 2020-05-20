@@ -41,7 +41,7 @@
 </template>
 
 <script>
-    import permissionService from "../../../services/permissionService";
+    import permissionRepository from "../../../repositories/permissionRepository";
 
     export default {
         data() {
@@ -51,7 +51,7 @@
         },
         name: 'PermissionList',
         created () {
-            permissionService.list()
+            permissionRepository.list()
                 .then((response) => {
                     this.permissions = response;
             })
