@@ -41,6 +41,8 @@
 </template>
 
 <script>
+    import permissionService from "../../../services/permissionService";
+
     export default {
         data() {
             return {
@@ -49,10 +51,9 @@
         },
         name: 'PermissionList',
         created () {
-            this.$http
-                .get('permission.list')
-                .then(response => {
-                this.permissions = response.data.data;
+            permissionService.list()
+                .then((response) => {
+                    this.permissions = response;
             })
         }
     }
