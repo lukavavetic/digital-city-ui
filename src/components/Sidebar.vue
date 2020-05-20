@@ -7,10 +7,6 @@
       <router-link to="/manage" exact tag="button" class="sidebar-button sidebar-button:hover m-1">
         Upravljanje
       </router-link>
-
-      <button class="sidebar-button sidebar-button:hover m-1">Stipendije</button>
-      <button class="sidebar-button sidebar-button:hover m-1">Subvencije za prijevoz</button>
-      <button class="sidebar-button sidebar-button:hover m-1">Subvencije za vrtić</button>
     </div>
   </div>
 </template>
