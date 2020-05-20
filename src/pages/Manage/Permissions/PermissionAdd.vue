@@ -52,11 +52,8 @@
         methods: {
             post: function() {
                 var self = this;
-                this.$http.post('http://192.168.1.12:80/api/permission.create', this.permission,
-                    { headers: {
-                        'Accept': 'application/json'
-                        }
-                }).then(function() {
+                this.$http.post('permission.create', this.permission
+                ).then(function() {
                     self.successAlert();
                 });
             },

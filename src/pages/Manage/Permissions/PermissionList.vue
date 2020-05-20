@@ -49,8 +49,8 @@
         },
         name: 'PermissionList',
         created () {
-            this.$http.get('http://192.168.1.12:80/api/permission.list', {
-            }).then(response => {
+            this.$http.get('permission.list')
+                .then(response => {
                 this.permissions = response.data.data;
             })
         }
