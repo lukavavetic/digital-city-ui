@@ -7,7 +7,7 @@ import { router } from './routes.js'
 
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
-axios.defaults.baseURL = 'http://192.168.1.12:80/api/';
+axios.defaults.baseURL = 'http://192.168.0.13:80/api/';
 axios.defaults.headers.common['Accept'] = 'application/json';
 
 

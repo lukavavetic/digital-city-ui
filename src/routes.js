@@ -8,6 +8,7 @@ import UserList from './pages/Manage/Users/UserList.vue'
 import PermissionList from "./pages/Manage/Permissions/PermissionList";
 import ManageMain from "./pages/Manage/ManageMain";
 import PermissionAdd from "./pages/Manage/Permissions/PermissionAdd";
+import PermissionEdit from "./pages/Manage/Permissions/PermissionEdit";
 
 function createRouter() {
     var router = new Router({
@@ -39,6 +40,11 @@ function createRouter() {
                 name: '',
                 component: PermissionAdd
             },
+            {
+                path: '/manage/permission/edit/:id',
+                name: '',
+                component: PermissionEdit
+            }
         ]
     })
 
