@@ -1,4 +1,4 @@
-<template>
+ <template>
   <div>
     <div class="flex justify-center">
       <div class="flex-col w-1/2">

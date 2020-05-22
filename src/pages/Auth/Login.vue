@@ -1,17 +1,18 @@
 <template>
   <div id="test">
-    <Table></Table>
+    <LoginForm></LoginForm>
   </div>
 </template>
 
 <script>
-import Table from '@/components/Table'
+import LoginForm from '@/components/LoginForm'
 
 export default {
-  name: 'UserList',
+  name: 'Login',
   components: {
-    Table
+    LoginForm
   }
+
 }
 </script>
 
