@@ -19,12 +19,16 @@ export default  {
                 return response.data.data;
             })
     },
-    create($body) {
+    create($data) {
         return axios
-            .post('permission.create', $body);
+            .post('permission.create', $data);
     },
-    update($body) {
+    update($data) {
         return axios
-            .post('permission.update', $body);
+            .post('permission.update', $data);
+    },
+    delete($id) {
+        return axios
+            .post('permission.delete', $id)
     }
 }

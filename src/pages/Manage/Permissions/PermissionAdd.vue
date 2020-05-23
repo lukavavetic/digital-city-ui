@@ -24,7 +24,7 @@
 
                     <div class="flex">
                         <div class="form-box mr-3">
-                            <button v-on:click.prevent="post" class="form-submit-button form-submit-button:hover">Izmijeni</button>
+                            <button v-on:click.prevent="post" class="form-submit-button form-submit-button:hover">Dodaj</button>
                         </div>
 
                         <div class="form-box">

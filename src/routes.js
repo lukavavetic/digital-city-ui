@@ -21,27 +21,27 @@ function createRouter() {
                 component: Login
             },
             {
-                path: '/manage',
+                path: '/admin',
                 name: '',
                 component: ManageMain
             },
             {
-                path: '/manage/users',
+                path: '/admin/users',
                 name: '',
                 component: UserList
             },
             {
-                path: '/manage/permissions',
+                path: '/admin/permissions',
                 name: '',
                 component: PermissionList
             },
             {
-                path: '/manage/permissions/add',
+                path: '/admin/permissions/add',
                 name: '',
                 component: PermissionAdd
             },
             {
-                path: '/manage/permission/edit/:id',
+                path: '/admin/permissions/edit/:identifier',
                 name: '',
                 component: PermissionEdit
             }

@@ -18,13 +18,13 @@
                     <div class="flex">
                         <div class="form-box mr-3">
                             <label class="form-label">Ime dozvole</label>
-                            <input type="text" class="form-text-input" v-model.lazy="permission.name">
+                            <input type="text" class="form-text-input" v-model.lazy="permissionUpdateData.name" :placeholder="permission.name">
                         </div>
                     </div>
 
                     <div class="flex">
                         <div class="form-box mr-3">
-                            <button v-on:click.prevent="post" class="form-submit-button form-submit-button:hover">Dodaj</button>
+                            <button v-on:click.prevent="post" class="form-submit-button form-submit-button:hover">Izmijeni</button>
                         </div>
 
                         <div class="form-box">
@@ -46,13 +46,16 @@
         data () {
             return {
                 permission: {},
+                permissionUpdateData: {
+                    identifier: this.$route.params.identifier
+                },
                 showSuccessAlert: false,
             }
         },
         methods: {
             post: function() {
                 let self = this;
-                permissionRepository.update(this.permission)
+                permissionRepository.update(this.permissionUpdateData)
                     .then(function() {
                         self.successAlert();
                     });
@@ -63,6 +66,12 @@
                     this.showSuccessAlert = false
                 }, 3000);
             },
+        },
+        created () {
+            permissionRepository.info(this.permissionUpdateData.identifier)
+                .then((response) => {
+                    this.permission = response;
+                })
         }
     }
 </script>
