@@ -9,12 +9,18 @@ import PermissionList from "./pages/Admin/Permissions/PermissionList";
 import AdminMain from "./pages/Admin/AdminMain";
 import PermissionAdd from "./pages/Admin/Permissions/PermissionAdd";
 import PermissionEdit from "./pages/Admin/Permissions/PermissionEdit";
+import Home from './pages/Home'
 
 function createRouter() {
     var router = new Router({
         mode: 'history',
         base: process.env.BASE_URL,
         routes: [
+            {
+                path: '/',
+                name: '',
+                component: Home
+            },
             {
                 path: '/login',
                 name: '',
