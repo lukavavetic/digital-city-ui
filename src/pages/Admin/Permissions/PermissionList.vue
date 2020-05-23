@@ -6,7 +6,7 @@
                     <h1 class="content-heading">Dozvole</h1>
                 </div>
                 <div class="w-1/2">
-                    <router-link to="/manage/permissions/add" exact>
+                    <router-link to="/admin/permissions/add" exact>
                         <button class="submit-request-button submit-request-button:hover">
                             Dodaj dozvolu
                         </button>
