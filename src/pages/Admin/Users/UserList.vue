@@ -6,7 +6,7 @@
       <br>
       <br>
       <div v-if="search.length > 0">
-          <div v-for="user in filteredBlogs" v-bind:key="user.id">
+          <div v-for="user in filteredUsers" v-bind:key="user.id">
               {{ user.firstName }} {{ user.lastName }}, identifier: {{ user. identifier }}
           </div>
       </div>
@@ -29,7 +29,7 @@ export default {
     })
   },
     computed: {
-        filteredBlogs: function() {
+        filteredUsers: function() {
             return this.users.filter((user) => {
                 return user.lastName.toLowerCase().startsWith(this.search.toLowerCase());
             })
