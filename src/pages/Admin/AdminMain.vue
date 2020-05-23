@@ -27,7 +27,7 @@
 
 <script>
     export default {
-        name: 'ManageMain'
+        name: 'AdminMain'
     }
 </script>
 

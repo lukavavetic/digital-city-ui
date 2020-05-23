@@ -28,12 +28,17 @@
                     </thead>
                     <tbody class="table-body">
                     <tr class="tr tr:hover" v-for="permission in permissions" v-bind:key="permission.identifier">
-                        <router-link :to="'/admin/permissions/edit/' + permission.identifier">
-                        <td class="td text-left">{{ permission.name }}</td>
+                        <td class="td text-left">
+                            <router-link :to="'/admin/permissions/edit/' + permission.identifier">
+                            {{ permission.name }}
+                            </router-link>
+                        </td>
                         <td class="td">
                             <i class="far fa-eye fa-lg hover:text-blue-800 cursor-pointer"></i>
                         </td>
-                        </router-link>
+                        <td class="td text-left">
+                            <button v-on:click.prevent="destroy(permission.identifier)" class="form-submit-button form-submit-button:hover">x</button>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
@@ -58,5 +63,16 @@
                     this.permissions = response;
             })
         },
+        updated() {
+            permissionRepository.list()
+                .then((response) => {
+                    this.permissions = response;
+                })
+        },
+        methods: {
+            destroy: function($identifier) {
+                permissionRepository.delete($identifier)
+            }
+        }
     }
 </script>

@@ -4,11 +4,11 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 import Login from './pages/Auth/Login.vue'
-import UserList from './pages/Manage/Users/UserList.vue'
-import PermissionList from "./pages/Manage/Permissions/PermissionList";
-import ManageMain from "./pages/Manage/ManageMain";
-import PermissionAdd from "./pages/Manage/Permissions/PermissionAdd";
-import PermissionEdit from "./pages/Manage/Permissions/PermissionEdit";
+import UserList from './pages/Admin/Users/UserList.vue'
+import PermissionList from "./pages/Admin/Permissions/PermissionList";
+import AdminMain from "./pages/Admin/AdminMain";
+import PermissionAdd from "./pages/Admin/Permissions/PermissionAdd";
+import PermissionEdit from "./pages/Admin/Permissions/PermissionEdit";
 
 function createRouter() {
     var router = new Router({
@@ -23,7 +23,7 @@ function createRouter() {
             {
                 path: '/admin',
                 name: '',
-                component: ManageMain
+                component: AdminMain
             },
             {
                 path: '/admin/users',

@@ -4,7 +4,7 @@
       <router-link to="/" exact tag="button" class="sidebar-button sidebar-button:hover m-1">
         Naslovnica
       </router-link>
-      <router-link to="/manage" exact tag="button" class="sidebar-button sidebar-button:hover m-1">
+      <router-link to="/admin" exact tag="button" class="sidebar-button sidebar-button:hover m-1">
         Upravljanje
       </router-link>
     </div>

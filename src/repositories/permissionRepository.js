@@ -27,8 +27,10 @@ export default  {
         return axios
             .post('permission.update', $data);
     },
-    delete($id) {
+    delete($identifier) {
         return axios
-            .post('permission.delete', $id)
+            .post('permission.delete', {
+                    identifier: $identifier
+            })
     }
 }
