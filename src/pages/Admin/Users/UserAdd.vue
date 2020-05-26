@@ -1,9 +1,9 @@
 <template>
     <div>
 
-        <!-- Permissions added success alert -->
-        <v-alert type="success" v-if="showAlert">
-            Dozvola uspješno dodana.
+        <!-- User added success alert -->
+        <v-alert if="showAlert" type="success">
+            Works!
         </v-alert>
 
         <!-- Add permission form -->
@@ -11,13 +11,13 @@
             <div class="flex justify-center">
                 <div class="flex-col w-1/2">
                     <div class="form-heading">
-                        Dodavanje nove dozvole
+                        Dodavanje novog korisnika
                     </div>
 
                     <div class="flex">
                         <div class="form-box mr-3">
-                            <label class="form-label">Ime dozvole</label>
-                            <input type="text" class="form-text-input" v-model.lazy="permission.name">
+                            <label class="form-label">Ime korisnika</label>
+                            <input type="text" class="form-text-input" v-model.lazy="user.firstName">
                         </div>
                     </div>
 
@@ -27,7 +27,7 @@
                         </div>
 
                         <div class="form-box">
-                            <router-link to="/admin/permissions">
+                            <router-link to="/admin/users">
                                 <button class="form-submit-button form-submit-button:hover">Odustani</button>
                             </router-link>
                         </div>
@@ -39,23 +39,29 @@
 </template>
 
 <script>
-    import permissionRepository from '../../../repositories/permissionRepository';
+    import userRepository from "../../../repositories/userRepository";
 
     export default {
         data () {
             return {
-                permission: {},
+                user: {},
                 showAlert: false,
             }
         },
         methods: {
             post: function() {
-                let self = this;
-                permissionRepository.create(this.permission)
+                const self = this;
+                userRepository.create(this.permission)
                     .then(function() {
-                    self.fireAlert();
-                });
+                        self.fireAlert();
+                    });
             },
-        },
+            fireAlert() {
+                this.showAlert = true;
+                setTimeout(() => {
+                    this.showAlert = false
+                }, 3000);
+            },
+        }
     }
 </script>

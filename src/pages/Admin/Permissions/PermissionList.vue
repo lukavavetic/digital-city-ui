@@ -1,5 +1,5 @@
 <template>
-    <div>
+   <!-- <div>
         <div>
             <div class="flex flex-row">
                 <div class="w-1/2">
@@ -43,6 +43,46 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+    </div> -->
+
+    <div>
+        <div class="flex flex-row">
+            <div class="w-1/2">
+                <h1 class="content-heading">Dozvole</h1>
+            </div>
+            <div class="w-1/2">
+                <button class="submit-request-button submit-request-button:hover">Dodaj dozvolu</button>
+            </div>
+        </div>
+
+        <div class="mt-2">
+            <h1 class="content-subheading">Ovo je pregled dostupnih dozvola.</h1>
+        </div>
+
+        <div class="mt-20">
+            <table class="table">
+                <thead class="table-head">
+                <tr>
+                    <th class="th text-left">Dozvola</th>
+                    <th class="th" colspan="3"></th>
+                </tr>
+                </thead>
+                <tbody class="table-body">
+                <tr class="tr tr:hover" v-for="permission in permissions" v-bind:key="permission.identifier">
+                    <td class="td text-left">{{ permission.name }}</td>
+                    <td class="td">
+                        <i class="far fa-eye fa-lg hover:text-blue-800 cursor-pointer"></i>
+                    </td>
+                    <td class="td">
+                        <i class="fas fa-pen fa-lg hover:text-blue-800 cursor-pointer"></i>
+                    </td>
+                    <td class="td">
+                        <i class="fas fa-trash fa-lg text-red-600 hover:text-red-700 cursor-pointer"></i>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </template>

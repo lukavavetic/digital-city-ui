@@ -4,12 +4,14 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 import Login from './pages/Auth/Login.vue'
-import UserList from './pages/Admin/Users/UserList.vue'
-import PermissionList from "./pages/Admin/Permissions/PermissionList";
 import AdminMain from "./pages/Admin/AdminMain";
+import UserList from './pages/Admin/Users/UserList.vue'
+import UserAdd from "./pages/Admin/Users/UserAdd";
+import PermissionList from "./pages/Admin/Permissions/PermissionList";
 import PermissionAdd from "./pages/Admin/Permissions/PermissionAdd";
 import PermissionEdit from "./pages/Admin/Permissions/PermissionEdit";
 import Home from './pages/Home'
+import Alert from './components/Alert'
 
 function createRouter() {
     var router = new Router({
@@ -20,6 +22,11 @@ function createRouter() {
                 path: '/',
                 name: '',
                 component: Home
+            },
+            {
+                path: '/test',
+                name: '',
+                component: Alert
             },
             {
                 path: '/login',
@@ -35,6 +42,11 @@ function createRouter() {
                 path: '/admin/users',
                 name: '',
                 component: UserList
+            },
+            {
+                path: '/admin/users/add',
+                name: '',
+                component: UserAdd
             },
             {
                 path: '/admin/permissions',
