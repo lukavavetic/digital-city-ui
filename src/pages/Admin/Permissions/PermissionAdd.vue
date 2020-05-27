@@ -1,10 +1,8 @@
 <template>
-    <div>
+    <div id="app">
 
         <!-- Permissions added success alert -->
-        <v-alert type="success" v-if="showAlert">
-            Dozvola uspješno dodana.
-        </v-alert>
+        <v-alert v-if="showAlert" type="success">Korisnik uspješno dodan.</v-alert>
 
         <!-- Add permission form -->
         <div>
@@ -53,8 +51,8 @@
                 let self = this;
                 permissionRepository.create(this.permission)
                     .then(function() {
-                    self.fireAlert();
-                });
+                        self.fireAlert();
+                    })
             },
         },
     }

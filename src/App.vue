@@ -1,5 +1,5 @@
 <template>
-
+  <v-app>
   <div id="app" class="h-full">
     <Header></Header>
 
@@ -11,6 +11,7 @@
       </div>
    </div>
   </div>
+  </v-app>
 </template>
 
 <script>

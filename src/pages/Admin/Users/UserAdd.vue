@@ -2,8 +2,8 @@
     <div>
 
         <!-- User added success alert -->
-        <v-alert if="showAlert" type="success">
-            Works!
+        <v-alert v-if="showAlert" type="success">
+            Korisnik uspješno dodan.
         </v-alert>
 
         <!-- Add permission form -->

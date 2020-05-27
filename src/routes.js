@@ -11,7 +11,6 @@ import PermissionList from "./pages/Admin/Permissions/PermissionList";
 import PermissionAdd from "./pages/Admin/Permissions/PermissionAdd";
 import PermissionEdit from "./pages/Admin/Permissions/PermissionEdit";
 import Home from './pages/Home'
-import Alert from './components/Alert'
 
 function createRouter() {
     var router = new Router({
@@ -22,11 +21,6 @@ function createRouter() {
                 path: '/',
                 name: '',
                 component: Home
-            },
-            {
-                path: '/test',
-                name: '',
-                component: Alert
             },
             {
                 path: '/login',
