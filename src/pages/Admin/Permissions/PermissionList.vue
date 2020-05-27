@@ -36,8 +36,8 @@
                         <i class="fas fa-pen fa-lg hover:text-blue-800 cursor-pointer" ></i>
                         </router-link>
                     </td>
-                    <td class="td">
-                        <i class="fas fa-trash fa-lg text-red-600 hover:text-red-700 cursor-pointer" v-on:click.prevent="destroy(permission.identifier)"></i>
+                    <td class="td" @click="destroy(permission.identifier)">
+                        <i class="fas fa-trash fa-lg text-red-600 hover:text-red-700 cursor-pointer"></i>
                     </td>
                 </tr>
                 </tbody>

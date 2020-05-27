@@ -55,13 +55,7 @@
                     .then(function() {
                         self.fireAlert();
                     });
-            },
-            fireAlert() {
-                this.showAlert = true;
-                setTimeout(() => {
-                    this.showAlert = false
-                }, 3000);
-            },
+            }
         }
     }
 </script>
