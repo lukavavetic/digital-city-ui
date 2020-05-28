@@ -1,16 +1,16 @@
 <template>
     <v-app>
-    <div>
-      <Header></Header>
+        <div>
+            <Header></Header>
 
-      <div class="flex flex-row">
-        <Sidebar></Sidebar>
+            <div class="flex flex-row">
+                <Sidebar></Sidebar>
 
-        <div class="page-content">
-          <router-view :key="$route.path"></router-view>
+                <div class="page-content">
+                    <router-view :key="$route.path"></router-view>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
     </v-app>
 
 </template>

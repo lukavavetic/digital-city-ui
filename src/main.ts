@@ -2,11 +2,11 @@ import Vue from 'vue'
 import App from './App.vue'
 import "./assets/css/tailwind.css"
 import axios from 'axios'
-import vuetify from "./plugins/vuetify.js";
+import vuetify from "./plugins/vuetify";
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 
-import { router } from './routes.js'
+import { router } from './routes'
 
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
