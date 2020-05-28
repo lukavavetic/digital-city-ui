@@ -46,16 +46,18 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
+    import Vue from 'vue'
+    import { PermissionDeleteRequestMapper } from "@/types/PermissionRequestMappers";
     import permissionRepository from '../../../repositories/permissionRepository';
 
-    export default {
+    export default Vue.extend ({
         data() {
             return {
-                permissions: []
+                permissions: {},
+                info: {} as PermissionDeleteRequestMapper
             }
         },
-        name: 'PermissionList',
         created () {
             permissionRepository.list()
                 .then((response) => {
@@ -69,9 +71,12 @@
                 })
         },
         methods: {
-            destroy: function($identifier) {
-                permissionRepository.delete($identifier)
+            destroy: function($identifier: string) {
+                this.info = {
+                    identifier: $identifier
+                }
+                permissionRepository.delete(this.info)
             }
         }
-    }
+    })
 </script>

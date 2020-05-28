@@ -1,31 +1,30 @@
 <template>
-  <v-app>
-  <div id="app" class="h-full">
-    <Header></Header>
+    <v-app>
+    <div>
+      <Header></Header>
 
-    <div class="flex flex-row">
-      <Sidebar></Sidebar>
+      <div class="flex flex-row">
+        <Sidebar></Sidebar>
 
-      <div class="page-content">
-        <router-view :key="$route.path"></router-view>
+        <div class="page-content">
+          <router-view :key="$route.path"></router-view>
+        </div>
       </div>
-   </div>
-  </div>
-  </v-app>
+    </div>
+    </v-app>
+
 </template>
 
-<script>
-import Header from '@/components/Header'
-import Sidebar from '@/components/Sidebar'
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import Header from '@/components/Header.vue'
+import Sidebar from '@/components/Sidebar.vue'
 
-export default {
-  name: 'App',
+@Component({
   components: {
     Header,
     Sidebar
-  }
-}
+  },
+})
+export default class App extends Vue {}
 </script>
-
-
-

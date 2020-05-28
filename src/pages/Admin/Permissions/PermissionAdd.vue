@@ -36,24 +36,22 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
+    import Vue from 'vue'
+    import { PermissionCreateRequestMapper } from "@/types/PermissionRequestMappers";
     import permissionRepository from '../../../repositories/permissionRepository';
 
-    export default {
+    export default Vue.extend({
         data () {
             return {
-                permission: {},
+                permission: {} as PermissionCreateRequestMapper,
                 showAlert: false,
             }
         },
         methods: {
             post: function() {
-                let self = this;
                 permissionRepository.create(this.permission)
-                    .then(function() {
-                        self.fireAlert();
-                    })
             },
         },
-    }
+    })
 </script>

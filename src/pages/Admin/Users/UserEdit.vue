@@ -2,8 +2,8 @@
     <div>
 
         <!-- Permissions added success alert -->
-        <v-alert v-if="showAlert" type="success">
-            Dozvola uspješno izmijenjena.
+        <v-alert :if="showAlert" type="success">
+            Korisnik uspješno izmijenjen.
         </v-alert>
 
         <!-- Add permission form -->
@@ -11,19 +11,19 @@
             <div class="flex justify-center">
                 <div class="flex-col w-1/2">
                     <div class="form-heading">
-                        Izmjena dozvole
+                        Izmjena korisnika
                     </div>
 
                     <div class="flex">
                         <div class="form-box mr-3">
-                            <label class="form-label">Ime dozvole</label>
-                            <input type="text" class="form-text-input" v-model.lazy="permissionUpdateData.name" :placeholder="permission.name">
+                            <label class="form-label">Ime</label>
+                            <input type="text" class="form-text-input" :model="permissionUpdateData.name" :placeholder="permission.name">
                         </div>
                     </div>
 
                     <div class="flex">
                         <div class="form-box mr-3">
-                            <button v-on:click.prevent="post" class="form-submit-button form-submit-button:hover">Izmijeni</button>
+                            <button @click.prevent="post" class="form-submit-button form-submit-button:hover">Izmijeni</button>
                         </div>
 
                         <div class="form-box">
@@ -38,41 +38,33 @@
     </div>
 </template>
 
-<script lang="ts">
-    import Vue from 'vue'
-    import {
-        PermissionInfoRequestMapper,
-        PermissionUpdateRequestMapper
-    } from "@/types/PermissionRequestMappers";
+<script>
     import permissionRepository from "../../../repositories/permissionRepository";
 
-    export default Vue.extend({
+    export default {
         data () {
             return {
                 permission: {},
                 permissionUpdateData: {
                     identifier: this.$route.params.identifier
-                } as PermissionUpdateRequestMapper,
-                permissionInfo: {
-                    identifier: this.$route.params.identifier
-                } as PermissionInfoRequestMapper,
-                showAlert: false as boolean,
+                },
+                showAlert: false,
             }
         },
         methods: {
             post: function() {
                 let self = this;
                 permissionRepository.update(this.permissionUpdateData)
-                .then(function() {
-                    self.showAlert = true;
-                })
+                    .then(function() {
+                        self.successAlert();
+                    });
             }
         },
         created () {
-            permissionRepository.info(this.permissionInfo)
+            permissionRepository.info(this.permissionUpdateData.identifier)
                 .then((response) => {
                     this.permission = response;
                 })
         }
-    })
+    }
 </script>

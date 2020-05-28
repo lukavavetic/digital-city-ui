@@ -4,13 +4,13 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 import Login from './pages/Auth/Login.vue'
-import AdminMain from "./pages/Admin/AdminMain";
+import AdminMain from "./pages/Admin/AdminMain.vue";
 import UserList from './pages/Admin/Users/UserList.vue'
-import UserAdd from "./pages/Admin/Users/UserAdd";
-import PermissionList from "./pages/Admin/Permissions/PermissionList";
-import PermissionAdd from "./pages/Admin/Permissions/PermissionAdd";
-import PermissionEdit from "./pages/Admin/Permissions/PermissionEdit";
-import Home from './pages/Home'
+import UserAdd from "./pages/Admin/Users/UserAdd.vue";
+import PermissionList from "./pages/Admin/Permissions/PermissionList.vue";
+import PermissionAdd from "./pages/Admin/Permissions/PermissionAdd.vue";
+import PermissionEdit from "./pages/Admin/Permissions/PermissionEdit.vue";
+import Home from './pages/Home.vue'
 
 function createRouter() {
     var router = new Router({

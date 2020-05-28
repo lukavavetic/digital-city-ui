@@ -3,14 +3,14 @@ import axios from 'axios'
 export default  {
     list() {
         return axios
-            .get('permission.list')
+            .get('user.list')
             .then((response) => {
                 return response.data.data;
             })
     },
-    info($identifier) {
+    info($identifier: string) {
         return axios
-            .get('permission.info', {
+            .get('user.info', {
                 params: {
                     identifier: $identifier
                 }
@@ -19,18 +19,18 @@ export default  {
                 return response.data.data;
             })
     },
-    create($data) {
+    create($data: object) {
         return axios
-            .post('permission.create', $data);
+            .post('user.create', $data);
     },
-    update($data) {
+    update($data: object) {
         return axios
-            .post('permission.update', $data);
+            .post('user.update', $data);
     },
-    delete($identifier) {
+    delete($identifier: string) {
         return axios
-            .post('permission.delete', {
-                    identifier: $identifier
+            .post('user.delete', {
+                identifier: $identifier
             })
     }
 }
